@@ -17,16 +17,11 @@ let package = Package(
     targets: [
         .target(
             name: "TelemetrySDK",
-            path: "Sources/TelemetrySDK",
-            swiftSettings: [
-                .unsafeFlags([
-                    "-Xfrontend", "-disable-availability-checking",
-                    "-Xfrontend", "-warn-concurrency",
-                    "-Xfrontend", "-strict-concurrency=minimal"
-                ])
-            ]
-                
-                
+            path: "Sources/TelemetrySDK"
+        ),
+        .testTarget(
+            name: "TelemetrySDKTests",
+            dependencies: ["TelemetrySDK"]
         )
     ]
 )

@@ -25,7 +25,7 @@ final class TelemetrySDKTests: XCTestCase {
         TelemetryManager.shared.setUser(id: "test-user")
         
         // indirectly verify via log
-        TelemetryManager.shared.trackTrace("Test")
+        TelemetryManager.shared.trackTrace("Test", severity: 1)
         
         XCTAssertEqual(TelemetryManager.shared.getQueueCount(), 1)
     }
